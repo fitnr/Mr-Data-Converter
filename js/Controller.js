@@ -1,22 +1,19 @@
 var _gaq = _gaq || [];
 
 $(document).ready(function(){
-  var widthOffset = 345;
-  var heightOffset = 35
-
-  var d = new DataConverter('converter');
-
-  var sidebar = $('#header');
-
-  var win = $(window);
-  var w = win.width() - widthOffset;
-  var h = win.height() - heightOffset;
+  var widthOffset = 345,
+    heightOffset = 35,
+    d = new DataConverter('converter'),
+    sidebar = $('#header'),
+    win = $(window),
+    w = win.width() - widthOffset,
+    h = win.height() - heightOffset;
 
   d.create(w,h);
 
   $(".settingsElement").change(updateSettings);
 
-  $(window).bind('resize',function() {  
+  $(window).bind('resize',function() {
 
       w = win.width() - widthOffset;
       h = win.height() - heightOffset;
@@ -30,7 +27,7 @@ $(document).ready(function(){
     
     if (evt) {
       _gaq.push(['_trackEvent', 'Settings',evt.currentTarget.id ]);
-    };
+    }
 
     d.includeWhiteSpace = $('#includeWhiteSpaceCB').attr('checked');
     
@@ -40,7 +37,7 @@ $(document).ready(function(){
       if (indentType === "tabs") {
         d.indent = "\t";
       } else if (indentType === "spaces") {
-        d.indent = "  "
+        d.indent = "  ";
       }
     } else {
       $("input[name=indentType]").attr("disabled", "disabled");
@@ -71,7 +68,7 @@ $(document).ready(function(){
     d.useUnderscores = true;
     
     d.convert();
-  };
+  }
 
   updateSettings();
   
