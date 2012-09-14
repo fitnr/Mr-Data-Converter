@@ -29,7 +29,7 @@ function DataConverter(nodeId) {
                                 {"text":"Ruby",                   "id":"ruby",             "notes":""},
                                 {"text":"XML - Properties",       "id":"xmlProperties",    "notes":""},
                                 {"text":"XML - Nodes",            "id":"xml",              "notes":""}];
-  this.outputDataType         = "xml";
+  this.outputDataType         = "html";
   
   this.columnDelimiter        = "\t";
   this.rowDelimiter           = "\n";
