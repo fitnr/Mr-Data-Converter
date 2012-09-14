@@ -91,7 +91,7 @@ var DataGridRenderer = {
     outputText += indent+indent+"<tr>"+newLine;
     
     for (var j=0; j < numColumns; j++) {
-      outputText += indent+indent+indent+'<th class="'+headerNames[j]+'-cell">';          
+      outputText += indent+indent+indent+'<th>';          
       outputText += headerNames[j];
       outputText += '</th>'+newLine;
     };
@@ -100,15 +100,9 @@ var DataGridRenderer = {
     outputText += indent+"<tbody>"+newLine;
     for (var i=0; i < numRows; i++) {
       var row = dataGrid[i];
-      var rowClassName = ""
-      if (i === numRows-1) {
-        rowClassName = ' class="lastRow"';
-      } else if (i === 0){
-        rowClassName = ' class="firstRow"';
-      }
-      outputText += indent+indent+"<tr"+rowClassName+">"+newLine;
+      outputText += indent+indent+"<tr>"+newLine;
       for (var j=0; j < numColumns; j++) {
-        outputText += indent+indent+indent+'<td class="'+headerNames[j]+'-cell">';          
+        outputText += indent+indent+indent+'<td>';          
         outputText += row[j]
         outputText += '</td>'+newLine
       };
